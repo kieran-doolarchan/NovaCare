@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
     <head>
         <title>NovaCare-tt</title>
@@ -48,9 +48,9 @@
 			<!--Home Section-->
 			<section id="home-section">
 				<div id="carousel-container">
-					<div id="home-slider-buttons">
-						<button id="prev-button" class="carousel-nav-button">◄</button>
-						<button id="next-button" class="carousel-nav-button">►</button>
+					<div class="slider-buttons" id="slider-buttons-home">
+						<button id="prev-button-home" class="carousel-nav-button">◄</button>
+						<button id="next-button-home" class="carousel-nav-button">►</button>
 					</div>
 					<div id="carousel-images">
 						<div id="home-image-slider">
@@ -68,13 +68,6 @@
 							</div>
 						</div>
 					</div>
-					<div class="carousel-footer" id="home-carousel-footer">
-                        <div class="sub-carousel-footer" id="sub-home-carousel-footer">
-                            <input type="radio" class="shop-footer-radio-active" name="travel-carousel-button" id="home-footer-1" checked>
-                            <input type="radio" class="shop-footer-radio" name="travel-carousel-button" id="home-footer-2">
-                            <input type="radio" class="shop-footer-radio" name="travel-carousel-button" id="home-footer-3">
-                        </div>
-                    </div>
 				</div>
 				
 				<!--Sidebar Container-->
@@ -84,6 +77,10 @@
 							<h3>Media</h3>
 						</div>
 						<div class="sidebar-carousel" id="media-carousel">
+							<div class="slider-buttons" id="slider-buttons-media">
+								<button id="prev-button-media" class="carousel-nav-button">◄</button>
+								<button id="next-button-media" class="carousel-nav-button">►</button>
+							</div>
 							<div class="sidebar-slider" id="media-slider">
 								<div class="sidebar-media-container" id="media-container1">
 									<a href="https://www.instagram.com/p/DOoTd4Hji2i/?img_index=1" target="_blank">
@@ -111,18 +108,16 @@
 								</div>
 							</div>
 						</div>
-						<div class="sidebar-carousel-footer" id="media-carousel-footer">
-							<div class="sidebar-sub-carousel-footer" id="sub-media-carousel-footer">
-								<input type="radio" class="media-footer-radio-active" name="media-carousel-button" id="media-footer-1" checked>
-								<input type="radio" class="media-footer-radio" name="media-carousel-button" id="media-footer-2">
-							</div>
-						</div>
 					</div>
 					<div class="sidebar-content" id="sidebar-news">
 						<div class="sidebar-title">
 							<h3>News</h3>
 						</div>
 						<div class="sidebar-carousel" id="news-carousel">
+							<div class="slider-buttons" id="slider-buttons-news">
+								<button id="prev-button-news" class="carousel-nav-button">◄</button>
+								<button id="next-button-news" class="carousel-nav-button">►</button>
+							</div>
 							<div class="sidebar-slider" id="news-slider">
 								<div class="sidebar-media-container" id="news-container1">
 									<div class="sidebar-image-container">
@@ -140,12 +135,6 @@
 										<h4>Coming Soon!</h4>
 									</div>
 								</div>
-							</div>
-						</div>
-						<div class="sidebar-carousel-footer" id="news-carousel-footer">
-							<div class="sidebar-sub-carousel-footer" id="sub-news-carousel-footer">
-								<input type="radio" class="media-footer-radio-active" name="news-carousel-button" id="news-footer-1" checked>
-								<input type="radio" class="media-footer-radio" name="news-carousel-button" id="news-footer-2">
 							</div>
 						</div>
 					</div>
@@ -752,19 +741,16 @@
 							</div>
 						</div>
 							<div id="location-pictures-container">
+								<div class="slider-buttons" id="slider-buttons-location">
+									<button id="prev-button-location" class="carousel-nav-button">◄</button>
+									<button id="next-button-location" class="carousel-nav-button">►</button>
+								</div>
 								<div id="location-pictures-carousel">
 									<div id="location-image-slider">
 										<img src="https://i.ibb.co/Df95Tbd0/location-img1.jpg" class="location-carousel-img" id="location-img1">
 										<img src="https://i.ibb.co/mC27QRCv/location-img2.jpg" class="location-carousel-img" id="location-img2">
 										<img src="https://i.ibb.co/zhh7qzNY/location-img3.jpg" class="location-carousel-img" id="location-img3">
 									</div>
-								</div>
-							</div>
-							<div class="carousel-footer" id="location-carousel-footer">
-								<div class="sub-carousel-footer" id="sub-location-carousel-footer">
-									<input type="radio" class="location-footer-radio-active" name="location-carousel-button" id="location-footer-1" checked>
-									<input type="radio" class="location-footer-radio" name="location-carousel-button" id="location-footer-2">
-									<input type="radio" class="location-footer-radio" name="location-carousel-button" id="location-footer-3">
 								</div>
 							</div>
 						</div>
@@ -785,7 +771,7 @@
 						<div id="appointment-methods-container">
 							<div id="appointment-telephone-container" class="appointment-methods-class">
 								<div class="appointment-methods-heading">
-									<h4 class="appointment-methods-heading-text">Call Us At</h4>
+									<h4 class="appointment-methods-heading-text">Call Us At:</h4>
 								</div>
 								<div class="appointment-methods-content">
 									<p id="appointment-number">(868) 741-6708</p>
@@ -833,71 +819,108 @@
 
 	<!--JavaScript-->
 	<script>
-		
-		
-		function sliderChange(element, distance, slideName) {
-                element.addEventListener("change", function() {
-                    if (element.checked) {
-                        document.querySelector(slideName).style.right = distance;
-                    }
-                });
-            }
 
-
-            sliderChange(document.getElementById("home-footer-1"), "0px", "#home-image-slider");
-            sliderChange(document.getElementById("home-footer-2"), "1300px", "#home-image-slider");
-            sliderChange(document.getElementById("home-footer-3"), "2600px", "#home-image-slider");
-
-			sliderChange(document.getElementById("media-footer-1"), "0px", "#media-slider");
-            sliderChange(document.getElementById("media-footer-2"), "425px", "#media-slider");
-			
-			sliderChange(document.getElementById("news-footer-1"), "0px", "#news-slider");
-            sliderChange(document.getElementById("news-footer-2"), "425px", "#news-slider");
-
-
-            function checkRadio() {
-                document.getElementById('home-footer-1').checked = true;
-                document.querySelector("#home-image-slider").style.right = "0px";
-                
-				document.getElementById('media-footer-1').checked = true;
-                document.querySelector("#media-slider").style.right = "0px";
-				
-				document.getElementById('news-footer-1').checked = true;
-                document.querySelector("#news-slider").style.right = "0px";
-
-                setTimeout(function() {
-                    document.getElementById('home-footer-2').checked = true;
-                    document.querySelector("#home-image-slider").style.right = "1300px";
-                }, 6000);
-
-				setTimeout(function() {
-                    document.getElementById('media-footer-2').checked = true;
-                    document.querySelector("#media-slider").style.right = "425px";
-                }, 4000);
-				
-				setTimeout(function() {
-                    document.getElementById('news-footer-2').checked = true;
-                    document.querySelector("#news-slider").style.right = "425px";
-                }, 5000);
-
-                setTimeout(function() {
-                    document.getElementById('home-footer-3').checked = true;
-                    document.querySelector("#home-image-slider").style.right = "2600px";
-                }, 12000); 
-            }
-
-            checkRadio();
-            setInterval(checkRadio, 18000);
-	
 	
 	// Show Carousel Navigation Buttons on Focus
-	document.getElementById("carousel-container").addEventListener("mouseenter", function() {
-		document.querySelector("#home-slider-buttons").style.display = "flex";
-	})
-	document.getElementById("carousel-container").addEventListener("mouseleave", function() {
-		document.querySelector("#home-slider-buttons").style.display = "none";
-	})
+	
+	const showNavButton = (sliderId, sliderBtn) => {
+		document.getElementById(sliderId).addEventListener("mouseenter", () => document.querySelector(sliderBtn).style.display = "flex")
+		document.getElementById(sliderId).addEventListener("mouseleave", () => document.querySelector(sliderBtn).style.display = "none")
+	};
+	
 
+	// Image Carousel Navigation
+	function initAutoSlider({
+		sliderId,
+		nextBtnId,
+		prevBtnId,
+		imageCount,
+		slideWidth,
+		intervalSeconds
+	}) {
+		let currentIndex = 0;
+		let timer = 0;
+		const slider = document.getElementById(sliderId);
+		const nextBtn = document.getElementById(nextBtnId);
+		const prevBtn = document.getElementById(prevBtnId);
+
+		function updateSliderPosition() {
+			slider.style.right = `${currentIndex * slideWidth}px`;
+		}
+
+		setInterval(() => {
+			if (timer < intervalSeconds) {
+				timer++;
+			} else {
+				currentIndex = (currentIndex + 1) % imageCount;
+				timer = 0;
+				updateSliderPosition();
+			}
+		}, 1000);
+
+		updateSliderPosition();
+
+		nextBtn.addEventListener("click", () => {
+			timer = 0;
+			currentIndex = (currentIndex + 1) % imageCount;
+			updateSliderPosition();
+		});
+
+		prevBtn.addEventListener("click", () => {
+			timer = 0;
+			currentIndex = (currentIndex - 1 + imageCount) % imageCount;
+			updateSliderPosition();
+		});
+	}
+
+
+	// home slider
+	showNavButton("carousel-container", "#slider-buttons-home");
+	
+	initAutoSlider({
+	sliderId: "home-image-slider",
+	nextBtnId: "next-button-home",
+	prevBtnId: "prev-button-home",
+	imageCount: 3,
+	slideWidth: 1300,
+	intervalSeconds: 6
+	});
+
+	// media slider
+	showNavButton("media-carousel", "#slider-buttons-media");
+	
+	initAutoSlider({
+	sliderId: "media-slider",
+	nextBtnId: "next-button-media",
+	prevBtnId: "prev-button-media",
+	imageCount: 2,
+	slideWidth: 425,
+	intervalSeconds: 7
+	});
+	
+	// news slider
+	showNavButton("news-carousel", "#slider-buttons-news");
+	
+	initAutoSlider({
+	sliderId: "news-slider",
+	nextBtnId: "next-button-news",
+	prevBtnId: "prev-button-news",
+	imageCount: 2,
+	slideWidth: 425,
+	intervalSeconds: 8
+	});
+	
+	// loction slider
+	showNavButton("location-pictures-container", "#slider-buttons-location");
+	
+	initAutoSlider({
+	sliderId: "location-image-slider",
+	nextBtnId: "next-button-location",
+	prevBtnId: "prev-button-location",
+	imageCount: 3,
+	slideWidth: 720,
+	intervalSeconds: 5
+	});
 
 
 // Services Collapsible Container
@@ -926,7 +949,6 @@
 	
 
 	// Appointment Popup Open and Close
-
 	document.getElementById("booking-button-nav").addEventListener("click", function(){
 		document.querySelector("#appointment-background").style.display = "flex";
 		document.querySelector("#appointment-section").style.display = "flex";
@@ -963,8 +985,8 @@
   	}
 	}
 	
-	// Navbar Button Active on Scroll
 	
+	// Navbar Button Active on Scroll
     const sections = document.querySelectorAll("section[id]");
     const navLinks = document.querySelectorAll(".nav-button");
 
@@ -1029,36 +1051,6 @@
 		event.preventDefault();
 		window.scrollTo({top: 0});
 	});
-
-	
-	// Carousel slider for location images
-	
-	sliderChange(document.getElementById("location-footer-1"), "0px", "#location-image-slider");
-	sliderChange(document.getElementById("location-footer-2"), "720px", "#location-image-slider");
-	sliderChange(document.getElementById("location-footer-3"), "1430px", "#location-image-slider");
-			
-	function checkRadio_location() {
-		document.getElementById('location-footer-1').checked = true;
-		document.querySelector("#location-image-slider").style.right = "0px";
-		
-		setTimeout(function() {
-			document.getElementById('location-footer-2').checked = true;
-			document.querySelector("#location-image-slider").style.right = "720px";
-		}, 3000);
-			
-		setTimeout(function() {
-			document.getElementById('location-footer-3').checked = true;
-			document.querySelector("#location-image-slider").style.right = "1440px";
-		}, 6000); 
-	}
-	
-	checkRadio_location();
-	setInterval(checkRadio_location, 9000);
-
-
-
-
-
 
 	</script>
 </html>
