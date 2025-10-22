@@ -37,7 +37,7 @@
 						<a href="#home-section" class="nav-button active" id="home-button">Home</a>
 						<a href="#services-section" class="nav-button">Our Services</a>
 						<a href="#doctor-section" class="nav-button">Doctors & Specialists</a>
-						<a href="#testimonial-section" class="nav-button">Testimonials</a>
+						<a href="#testimonial-section" class="nav-button" id="testimonial-button">Testimonials</a>
 						<a href="#location-section" class="nav-button">Location</a>
 					</div>
 				</div>	
@@ -981,12 +981,12 @@
     	document.getElementById("logo-png").style.height = "65px";
 		document.getElementById("navbar").style.boxShadow = " 0px 10px 8px -5px";
   	} else {
-    	document.getElementById("logo-png").style.height = "100px";
+    	document.getElementById("logo-png").style.height = "clamp(65px, 6vw, 100px)";
 		document.getElementById("navbar").style.boxShadow = "";
   	}
 	}
 	
-	document.getElementById("logo-png").style.height = "clamp(65px, 5vw, 100px)";
+	//document.getElementById("logo-png").style.height = "clamp(65px, 6vw, 100px)";
 
 	
 	
