@@ -7,6 +7,8 @@ body {
     font-family: Helvetica, Arial, sans-serif;
     margin: 0px;
     height: fit-content;
+	
+	overflow-x: hidden;
 }
 
 
@@ -85,6 +87,12 @@ body {
     background-color: lightblue ;
 }
 
+@media (max-width: 1200px) {
+    .headerbar-hide-on-small {
+        display: none;
+    }
+}
+
 
 
 /*navbar*/
@@ -117,12 +125,13 @@ body {
     border: #4f93ce 2px solid;
     border-radius: 25%;
     margin-left: 5px;
-    margin-right: 45px;
+	margin-right: clamp(10px, 3vw, 45px);
 }
 
 #logo-png {
-    height: 100px;
-    transition: 700ms ease;
+	height: clamp(50px, 10vw, 100px);
+	width: auto;
+	transition: 700ms ease;
 }
 
 
@@ -139,10 +148,10 @@ body {
     color: black;
     background-color: #faf7f0;
     font-family: Helvetica, Arial, sans-serif;
-    font-size: 20px;
+    font-size: clamp(14px, 1.85vw, 20px);
     font-weight: bold;
     white-space: nowrap;
-    padding: 10px 30px;
+    padding: 10px clamp(10px, 3vw, 30px);
     border-radius: 40px;
     border: none;
     display: inline-block;
@@ -256,10 +265,6 @@ body {
     display: none ;
 }
 
-.shop-footer-radio-active {
-    /*color: red;*/
-}
-
 #home-carousel-div2 {
     position: relative;
 }
@@ -271,7 +276,6 @@ body {
     left: 3%; 
 	z-index: 2;
 }
-
 
 
 /*sidebar*/
@@ -351,8 +355,6 @@ body {
     bottom: 0;
 	padding-top: 5px;
     color: white;
-
-	/*border: 1px red solid;*/
 }
 
 .sidebar-text h4, .sidebar-text p {
@@ -366,7 +368,6 @@ body {
 
 
 /*services*/
-
 #services-section {
     background-color: #e6e3de;
 	padding-bottom: 40px;

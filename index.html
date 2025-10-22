@@ -4,6 +4,7 @@
         <title>NovaCare-tt</title>
 		<link rel="icon" type="image/png" href="https://i.ibb.co/xKDx70yV/nc-logo.png">
         <link rel="stylesheet" href="style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <header>
@@ -12,8 +13,8 @@
 			<section id="headerbar">
 				<div id="headerbar-text">
 					<h1 id="novacare-name" class="headerbar-content">NovaCare Health Institute</h1>
-					<p id="headerbar-address" class="headerbar-content">LP#67 Orange Grove Road, St. Augustine Apt East</p>
-					<p class="headerbar-content">(868) 741-6708</p>
+					<p id="headerbar-address" class="headerbar-content headerbar-hide-on-small">LP#67 Orange Grove Road, St. Augustine Apt East</p>
+					<p class="headerbar-content headerbar-hide-on-small">(868) 741-6708</p>
 				</div>
 				<div id="social-contract-container">
                     <div id="socials-container">
@@ -984,6 +985,9 @@
 		document.getElementById("navbar").style.boxShadow = "";
   	}
 	}
+	
+	document.getElementById("logo-png").style.height = "clamp(65px, 5vw, 100px)";
+
 	
 	
 	// Navbar Button Active on Scroll
