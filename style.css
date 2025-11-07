@@ -267,11 +267,31 @@ body {
     display: flex;
 	position: relative;
     flex-direction: row;
-    width: 1300px;
+    width: clamp(700px, 65vw, 1300px);
     overflow: hidden;
 
     border-radius: 10px;
 }
+
+@media (max-width: 1500px) {
+	#home-section {
+		flex-direction: column;
+		align-items: center;
+	}
+	#carousel-images {
+		width: clamp(500px, 80vw, 1300px);
+	}
+	#carousel-container {
+		display: none;
+	}
+	#sidebar-container {
+		width: fit-content
+	}
+	.sidebar-content {
+		align-items: center;
+		justify-content: center;
+	}
+} 
 
 .slider-buttons {
 	display: none;
@@ -409,11 +429,20 @@ body {
     bottom: 0;
 	padding-top: 5px;
     color: white;
+	font-weight: bold;
 }
 
 .sidebar-text h4, .sidebar-text p {
     margin: 0;
     margin-bottom: 10px;
+}
+
+.sidebar-text h4 {
+	font-size: 20px;
+}
+
+.sidebar-text p {
+	font-size: 16px;
 }
 
 .sidebar-carousel-footer {
@@ -647,18 +676,20 @@ body {
 }
 
 #location-map {
-    width: 40vw;
+    width: clamp(450px, 40vw, 1000px);
 	aspect-ratio: 4/3;
     border: 5px #4f93ce solid;
     border-radius: 10px;
     transition: all 400ms ease-out;
 }
 
+/*
 #location-map:hover {
     border-radius: 5px;
 	border: 5px #4f93ce80 solid;
 	width: 45vw;
 }
+*/
 
 #location-content-address-and-qr {
 	display: flex;
@@ -703,6 +734,7 @@ body {
 	height: 250px;
 	border: 3px solid #4f93ce;
 	border-radius: 10px;
+	margin-top: 10px;
 }
 
 #location-content-hours-and-office {
@@ -722,6 +754,7 @@ body {
 	border-radius: 10px;
 	font-weight: bold;
 	background-color: #4f93ce80;
+	margin-bottom: 20px;
 }
 
 #location-content-hours-container {
@@ -732,7 +765,7 @@ body {
 #working-hours-container {
 	display: flex;
 	flex-direction: column;
-	width: 500px;
+	width: 430px;
 	font-size: 18px;
 }
 
@@ -770,7 +803,7 @@ body {
 	transition: transform 500ms ease-in-out;
 }
 
-.location-carousel {
+.location-pictures-carousel {
 	width: 720px;
 }
 
@@ -783,6 +816,23 @@ body {
     display: flex;
     position: relative;
     transition: 1500ms;
+}
+
+@media (max-width: 1300px) {
+	#location-content-directions {
+		flex-direction: column;
+		align-items: center;
+	}
+	#location-content-map-container {
+		margin-bottom: 20px;
+	}
+	#location-content-hours-and-office {
+		flex-direction: column;	
+	}
+	
+	#location-content-address-and-qr {
+		width: fit-content
+	}
 }
 
 
@@ -944,7 +994,7 @@ body {
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-around;
-	width: 10vw;
+	width: clamp(100px, 10vw, 400px);
 	padding-top: 10px;
 }
 
